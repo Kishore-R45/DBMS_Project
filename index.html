@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Connection Example</title>
+</head>
+<body>
+    <h2>Enter User Details:</h2>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Enter your name" required><br>
+        <input type="number" id="age" placeholder="Enter your age" required><br>
+        <input type="date" id="DOB" placeholder="Enter your DOB" required><br>
+        <input type="text" id="Mobile_No" placeholder="Enter your Mobile no" required><br>
+        <input type="email" id="Email" placeholder="Enter your Email" required><br>
+        <p></p>
+        <button type="submit">Submit</button>
+
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const DOB = document.getElementById('DOB').value;
+            const Mobile_No = document.getElementById('Mobile_No').value;
+            const Email = document.getElementById('Email').value;
+
+            fetch('http://localhost:3000/addUser', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, age, DOB, Mobile_No, Email })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
