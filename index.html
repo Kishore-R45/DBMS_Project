@@ -3,22 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Connection Example</title>
+    <link rel="stylesheet" href="style.css">
+    <title>DBMS Project</title>
 </head>
 <body>
-    <h2>Enter User Details:</h2>
-    <form id="userForm">
-        <input type="text" id="name" placeholder="Enter your name" required><br>
-        <input type="number" id="age" placeholder="Enter your age" required><br>
-        <input type="date" id="DOB" placeholder="Enter your DOB" required><br>
-        <input type="text" id="Mobile_No" placeholder="Enter your Mobile no" required><br>
-        <input type="email" id="Email" placeholder="Enter your Email" required><br>
-        <p></p>
-        <button type="submit">Submit</button>
-
-        <button type="reset">Reset</button>
-    </form>
-
+    <center><h1 id="title">DBMS Project</h1></center>
+    <div id="container">
+        <h3>Enter Your Details</h3>
+        <div class="parts">
+            <label>Name: </label><br>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="parts">
+            <label>Age: </label><br>
+            <input type="number" id="age" placeholder="Enter your age" required>
+        </div>
+        <div class="parts">
+            <label>DOB: </label><br>
+            <input type="date" id="DOB" placeholder="Enter your DOB" required>
+        </div>
+        <div class="parts">
+            <label>Mobile No: </label><br>
+            <input type="text" id="Mobile_No" placeholder="Enter your Mobile no" required>
+        </div>
+        <div class="parts">
+            <label>Email: </label><br>
+            <input type="email" id="Email" placeholder="Enter your Email" required>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </div>
+<div class="foot">
+    <center>All rights reserved &copy;<br>Design & Developed By Kishore...</center>
+</div>
     <script>
         document.getElementById('userForm').addEventListener('submit', function(e) {
             e.preventDefault();
